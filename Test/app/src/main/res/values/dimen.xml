@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 按钮圆角半径 -->
+    <dimen name="bbuton_rounded_corner_radius">8dp</dimen>
+    <!-- 注意：你的文件里写的是 bbuton（少了一个 t），应该是 button -->
+    <!-- 建议改为正确的拼写：button_rounded_corner_radius -->
+</resources>

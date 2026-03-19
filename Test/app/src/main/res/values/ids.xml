@@ -1,0 +1,4 @@
+<resources>
+    <item name="tag_app" type="id"/>
+    <item name="tag_book" type="id"/>
+</resources>

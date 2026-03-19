@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 系统默认颜色 -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 水波纹按钮需要的颜色 -->
+    <color name="reveal_color">#33020204</color>  <!-- 水波纹颜色 -->
+    <color name="bottom_color">#0C000000</color>  <!-- 按下背景颜色 -->
+
+    <!-- 危险按钮颜色 -->
+    <color name="bbutton_danger">#F44336</color>                    <!-- 红色-正常 -->
+    <color name="bbutton_danger_pressed">#D32F2F</color>            <!-- 深红-按下 -->
+    <color name="bbutton_danger_edge">#B71C1C</color>               <!-- 边框-正常 -->
+    <color name="bbutton_danger_disabled">#FFCDD2</color>           <!-- 浅红-禁用背景 -->
+    <color name="bbutton_danger_disabled_edge">#E57373</color>      <!-- 边框-禁用 -->
+
+    <!-- 普通按钮背景 -->
+    <color name="bottom_bg">#2196F3</color>                         <!-- 蓝色背景 -->
+</resources>
