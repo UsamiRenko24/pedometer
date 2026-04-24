@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pedometer</string>
+    <string name="food_category_carb">carb</string>
+    <string name="food_category_protein">protein</string>
+    <string name="food_category_fat">fat</string>
+    <string name="food_category_vegetable">vegetable</string>
+    <string name="food_category_fruit">fruit</string>
+    <string name="food_category_other">other</string>
+</resources>

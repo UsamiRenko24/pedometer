@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pedometer</string>
+    <string name="food_category_carb">主食/碳水类</string>
+    <string name="food_category_protein">蛋白质类</string>
+    <string name="food_category_fat">脂肪类</string>
+    <string name="food_category_vegetable">蔬菜类</string>
+    <string name="food_category_fruit">水果类</string>
+    <string name="food_category_other">其他类</string>
+
+</resources>
