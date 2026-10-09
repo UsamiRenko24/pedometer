@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ProgressBar
+        android:id="@+id/search_news_state_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/search_news_state_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_666666"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/search_news_state_action"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_news_tab_selected"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/news_refresh"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        android:visibility="gone" />
+</LinearLayout>

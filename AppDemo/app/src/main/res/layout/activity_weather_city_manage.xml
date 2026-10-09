@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/weather_city_manage_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EDF4FD">
+
+    <ScrollView
+        android:id="@+id/weather_city_manage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/weather_city_manage_art"
+                android:layout_width="132dp"
+                android:layout_height="96dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_home_app_weather_location_img" />
+
+            <ImageView
+                android:id="@+id/weather_city_manage_action"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/weather_manage_locations"
+                android:src="@drawable/icon_home_app_weather_manager_white" />
+
+            <TextView
+                android:id="@+id/weather_city_manage_done"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_weather_done"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/weather_manage_done"
+                android:textColor="@color/color_216AFF"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/weather_city_manage_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/content_back"
+                android:src="@drawable/icon_home_app_weather_back_white" />
+
+            <TextView
+                android:id="@+id/weather_city_manage_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_city_manage_back"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_toStartOf="@id/weather_city_manage_art"
+                android:text="@string/weather_manage_title"
+                android:textColor="@color/color_1C2430"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/weather_city_manage_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_city_manage_title"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="12dp"
+                android:layout_toStartOf="@id/weather_city_manage_art"
+                android:text="@string/weather_manage_subtitle"
+                android:textColor="@color/color_9AA6B5"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/weather_city_manage_locate"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/weather_city_manage_subtitle"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_weather_manage_card"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:id="@+id/weather_city_manage_locate_icon"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_home_app_weather_location_small" />
+
+                <ImageView
+                    android:id="@+id/weather_city_manage_locate_arrow"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_home_app_weather_right_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@id/weather_city_manage_locate_arrow"
+                    android:layout_toEndOf="@id/weather_city_manage_locate_icon"
+                    android:text="@string/weather_manage_enable_location"
+                    android:textColor="@color/color_1C3A7E"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weather_city_manage_search"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/weather_city_manage_locate"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_weather_manage_card">
+
+                <ImageView
+                    android:id="@+id/weather_city_manage_search_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_home_app_weather_search_grey" />
+
+                <EditText
+                    android:id="@+id/weather_city_manage_search_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/weather_city_manage_search_icon"
+                    android:background="@null"
+                    android:hint="@string/weather_manage_search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingEnd="14dp"
+                    android:textColor="@color/color_1C2430"
+                    android:textColorHint="@color/color_C3CDD8"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/weather_city_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_city_manage_search"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/weather_city_add_empty"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_below="@id/weather_city_manage_search"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_weather_manage_add"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_home_app_weather_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/weather_manage_add_city"
+                    android:textColor="@color/color_2F6BFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weather_city_add_list"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_below="@id/weather_city_list"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_weather_manage_add"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="28dp"
+                android:paddingEnd="28dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_home_app_weather_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/weather_manage_add_city"
+                    android:textColor="@color/color_2F6BFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

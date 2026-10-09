@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_stream_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:clickable="false"
+            android:contentDescription="@null"
+            android:focusable="false"
+            android:src="@drawable/volume_small"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_stream_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            tools:text="Ringtone" />
+
+        <ImageView
+            android:id="@+id/btn_mute"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/content_mute"
+            android:focusable="true"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/volume_small_silent"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seek_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:max="100"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:progress="70"
+        android:progressDrawable="@drawable/bg_seekbar"
+        android:splitTrack="false"
+        android:thumb="@drawable/bg_seekbar_thumb"
+        android:thumbOffset="0dp" />
+</LinearLayout>

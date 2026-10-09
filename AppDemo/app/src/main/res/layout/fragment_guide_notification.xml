@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_guide_gradient"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="22dp"
+    android:paddingEnd="22dp">
+
+    <ImageView
+        android:id="@+id/iv_mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-22dp"
+        android:layout_marginEnd="-22dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_guide_notify_mask"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/guide_notify_title"
+        android:textColor="@color/guide_text_color"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="@string/guide_notify_subtitle"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/guide_notify_desc"
+        android:textColor="@color/guide_text_color"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
+
+    <FrameLayout
+        android:id="@+id/demo_stage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/btn_enable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <FrameLayout
+                android:layout_width="375dp"
+                android:layout_height="220dp"
+
+                android:layout_gravity="center_horizontal"
+                android:clipChildren="false">
+
+                <FrameLayout
+                    android:id="@+id/bell_group"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="35dp"
+                    android:clipChildren="false">
+
+                    <ImageView
+                        android:id="@+id/iv_bell"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/guide_page3_notice" />
+
+                    <ImageView
+                        android:id="@+id/iv_badge"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="start|top"
+                        android:layout_marginStart="135dp"
+                        android:layout_marginTop="9dp"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/guide_page3_remind" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv_waves"
+                    android:layout_width="50dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="93dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/guide_page3_vector" />
+
+                <FrameLayout
+                    android:id="@+id/wave_emit"
+                    android:layout_width="110dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="148dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipChildren="false">
+
+                    <View
+                        android:id="@+id/wave_arc_1"
+                        android:layout_width="22dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center_vertical|start"
+                        android:background="@drawable/bg_guide_notify_arc" />
+
+                    <View
+                        android:id="@+id/wave_arc_2"
+                        android:layout_width="33dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="center_vertical|start"
+                        android:background="@drawable/bg_guide_notify_arc" />
+
+                    <View
+                        android:id="@+id/wave_arc_3"
+                        android:layout_width="44dp"
+                        android:layout_height="88dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_gravity="center_vertical|start"
+                        android:background="@drawable/bg_guide_notify_arc" />
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <!-- 音量控制卡片 -->
+            <FrameLayout
+                android:id="@+id/volume_control"
+                android:layout_width="315dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="4dp">
+<!--                android:background="@drawable/bg_guide_notify_card"-->
+            <LinearLayout
+                android:id="@+id/card_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="18dp">
+
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:padding="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/spalsh_round"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.VolumeIcon.Small"
+                        app:strokeWidth="0dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/guide_app_name"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/guide_default_card_tagline"
+                        android:textColor="@color/color_335688"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/volume_control_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_guide_volume_control_mask" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/btn_enable"
+        android:layout_width="325dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_guide_cta"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="24dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/guide_notify_cta"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|center_vertical"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

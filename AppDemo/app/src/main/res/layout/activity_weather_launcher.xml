@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_home_app_weather_bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weather_splash_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.demo.app.launcher.ui.view.splash.SplashIconView
+            android:id="@+id/weather_splash_icon"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:contentDescription="@string/screen0_weather"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_home_app_weather"
+            app:layout_constraintBottom_toTopOf="@id/weather_splash_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.42" />
+
+        <TextView
+            android:id="@+id/weather_splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/screen0_weather"
+            android:textColor="@color/color_0057FA"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_splash_icon" />
+
+        <ProgressBar
+            android:id="@+id/weather_splash_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginBottom="16dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_weather_splash_progress"
+            app:layout_constraintBottom_toTopOf="@id/weather_splash_slogan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.62" />
+
+        <TextView
+            android:id="@+id/weather_splash_slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:text="@string/weather_slogan"
+            android:textColor="@color/color_B7C5D6"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/launcher_flSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

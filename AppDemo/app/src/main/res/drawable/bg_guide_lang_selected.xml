@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="335dp"
+    android:height="69dp"
+    android:viewportWidth="335"
+    android:viewportHeight="69">
+    <group>
+        <!-- 圆角蒙版：外框圆角矩形 -->
+        <clip-path
+            android:pathData="M18 0H317C326.941 0 335 8.05887 335 18V51C335 60.9411 326.941 69 317 69H18C8.05887 69 0 60.9411 0 51V18C0 8.05887 8.05887 0 18 0Z" />
+
+        <!-- 渐变填充，被clip-path裁剪在圆角框内 -->
+        <path android:pathData="M0 0 H335 V69 H0 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="83.75"
+                    android:startY="34.5"
+                    android:endX="251.25"
+                    android:endY="34.5">
+                    <item android:color="#3099D5FF" android:offset="0" />
+                    <item android:color="#2E4EB5FF" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- 圆角描边 BORDER 边框，strokeWidth=3，颜色#55BAFF -->
+        <path
+            android:pathData="M18 0H317C326.941 0 335 8.05887 335 18V51C335 60.9411 326.941 69 317 69H18C8.05887 69 0 60.9411 0 51V18C0 8.05887 8.05887 0 18 0Z"
+            android:strokeWidth="3"
+            android:strokeColor="#55BAFF"
+            android:fillColor="#00000000" />
+    </group>
+</vector>

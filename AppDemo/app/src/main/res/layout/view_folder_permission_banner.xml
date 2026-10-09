@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/folder_permission"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/bg_folder_permission"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="14dp">
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_home_app_folder_info" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:text="@string/folder_permission_required"
+        android:textColor="@color/color_white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_folder_chevron_white" />
+</LinearLayout>

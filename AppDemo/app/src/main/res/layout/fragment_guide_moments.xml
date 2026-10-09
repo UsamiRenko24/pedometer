@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_guide_gradient"
+    android:clipChildren="false">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_guide_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/guide_story_moments"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/guide_story_life"
+        android:textColor="@color/accent_blue"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <ImageView
+        android:id="@+id/iv_pedestal"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guide_page4"
+        app:layout_constraintBottom_toTopOf="@id/dot_row"
+        app:layout_constraintDimensionRatio="H,1125:492"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_shadow"
+        android:layout_width="190dp"
+        android:layout_height="36dp"
+        android:contentDescription="@null"
+        android:elevation="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/guide_page8_headphones_shadow"
+        app:layout_constraintEnd_toEndOf="@id/iv_pedestal"
+        app:layout_constraintStart_toStartOf="@id/iv_pedestal"
+        app:layout_constraintTop_toTopOf="@id/iv_pedestal"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pedestal"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <ImageView
+        android:id="@+id/iv_headphones"
+        android:layout_width="236dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="-28dp"
+        android:contentDescription="@null"
+        android:elevation="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guide_page8_headphones"
+        app:layout_constraintBottom_toTopOf="@id/iv_pedestal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="228dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+        app:layout_constraintVertical_bias="1" />
+
+    <FrameLayout
+        android:id="@+id/orbit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_headphones"
+        app:layout_constraintEnd_toEndOf="@id/iv_headphones"
+        app:layout_constraintStart_toStartOf="@id/iv_headphones"
+        app:layout_constraintTop_toTopOf="@id/iv_headphones">
+
+        <ImageView
+            android:id="@+id/iv_media"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page8_media" />
+
+        <ImageView
+            android:id="@+id/iv_notice"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page8_notice" />
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page8_play" />
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/dot_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20dp"
+        android:elevation="9dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/iv_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/bg_guide_dot_off" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_guide_dot_off" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_guide_dot_on" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_notify_mask"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:contentDescription="@null"
+        android:elevation="7dp"
+        android:src="@drawable/bg_guide_notify_mask"
+        app:layout_constraintBottom_toTopOf="@id/iv_mask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_mask"
+        />
+    <ImageView
+        android:id="@+id/iv_mask"
+        android:layout_width="0dp"
+        android:layout_height="270dp"
+        android:contentDescription="@null"
+        android:elevation="7dp"
+        android:src="@drawable/bg_guide_monment_mask"
+        app:layout_constraintBottom_toTopOf="@id/guide_ad_slot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+ />
+
+    <ImageView
+        android:id="@+id/iv_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:elevation="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/guide_page_bottom_white"
+        app:layout_constraintBottom_toTopOf="@id/guide_ad_slot"
+        app:layout_constraintDimensionRatio="H,1125:512"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="36dp"
+        android:elevation="9dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bottom"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_story_lets"
+            android:textColor="@color/color_12345F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/guide_story_clearer"
+            android:textColor="@color/color_5C7596"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/btn_next"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_guide_story_next"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_bottom"
+        app:layout_constraintVertical_bias="0.65">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right_long" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/guide_ad_slot"
+        layout="@layout/view_native_ad_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

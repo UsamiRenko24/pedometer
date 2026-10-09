@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F8F9FB">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/launcher_search_feed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingTop="4dp"
+        android:paddingBottom="24dp" />
+
+    <ImageButton
+        android:id="@+id/launcher_search_home_top"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/bg_news_tab_normal"
+        android:contentDescription="@null"
+        android:rotation="-90"
+        android:src="@drawable/ic_folder_chevron"
+        android:visibility="gone" />
+</FrameLayout>

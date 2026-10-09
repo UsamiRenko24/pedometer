@@ -1,0 +1,115 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/color_5185fb</item>
+        <item name="colorPrimaryDark">@color/color_5185fb</item>
+        <item name="colorAccent">@color/color_5185fb</item>
+        <item name="colorControlNormal">@color/color_999999</item>
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+
+    <style name="Theme.MyLauncher" parent="Theme.MyApplication">
+        <item name="android:windowBackground">@drawable/launcher_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- 启动页不用 Theme.MyLauncher，避免窗口背景里的桌面图标被系统启动画面再画一遍。 -->
+    <style name="Theme.Splash" parent="Theme.MyApplication">
+        <item name="android:windowBackground">@drawable/spalsh_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">@drawable/spalsh_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_screen_icon</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Theme.SlideActivity" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/Animation.SlideActivity</item>
+    </style>
+
+    <!-- 滑动 Activity 动画样式 -->
+    <style name="Animation.SlideActivity" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Activity 打开时：新 Activity 从右侧滑入，旧 Activity 向左侧滑出 -->
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <!-- Activity 关闭时：当前 Activity 向右侧滑出，下层 Activity 从左侧滑入 -->
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+
+    <style name="Theme.FlashLight.GameCenter" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/color_f5f5f5</item>
+        <item name="colorPrimary">@color/color_2c8fff</item>
+        <item name="colorPrimaryDark">@color/color_2c8fff</item>
+        <item name="colorAccent">@color/color_2c8fff</item>
+        <item name="colorControlNormal">@color/color_999999</item>
+    </style>
+
+    <style name="ShapeAppearance.App.CornerSize12" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/sw_dp_12</item>
+    </style>
+
+    <style name="ShapeAppearance.App.CornerSize8" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/sw_dp_8</item>
+    </style>
+
+    <style name="CalendarJumpPicker">
+        <item name="android:textColorPrimary">@color/color_3C7CFF</item>
+        <item name="android:textSize">22sp</item>
+        <item name="colorControlNormal">@android:color/transparent</item>
+    </style>
+
+    <style name="FolderCategoryCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">6dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/bg_folder_category</item>
+    </style>
+
+    <style name="FolderCategoryIcon">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="FolderCategoryLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">@color/color_1C1C1E</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+</resources>

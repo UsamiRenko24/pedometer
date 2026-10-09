@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_wallpaper_sheet"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_wallpaper_sheet_handle" />
+
+            <ImageView
+                android:id="@+id/wallpaper_setting_close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:contentDescription="@null"
+                android:padding="8dp"
+                android:src="@drawable/ic_wallpaper_close" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_wallpaper_preview_card"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:id="@+id/wallpaper_setting_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9:41"
+                        android:textColor="@color/color_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/wallpaper_setting_date"
+                        android:textColor="@color/color_white"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_wallpaper_preview_card"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:id="@+id/wallpaper_setting_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/img_wallpaper_home_overlay" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/wallpaper_setting_lock_action"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_wallpaper_apply_lock"
+            android:gravity="center"
+            android:text="@string/wallpaper_setting_lock"
+            android:textColor="@color/color_white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wallpaper_setting_desktop_action"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="@string/wallpaper_setting_desktop"
+            android:textColor="@color/color_2c8fff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wallpaper_setting_both_action"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/wallpaper_setting_both"
+            android:textColor="@color/color_2c8fff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/wallpaper_setting_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</FrameLayout>

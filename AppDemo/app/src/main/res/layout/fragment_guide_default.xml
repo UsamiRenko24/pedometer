@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_guide_gradient"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="22dp"
+    android:paddingEnd="22dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/guide_default_title"
+        android:textColor="@color/guide_text_color"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="@string/guide_default_subtitle"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/guide_text_color"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/demo_stage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/btn_set_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc">
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page2_phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 选中卡：随屏幕宽度收缩，避免真机溢出 -->
+            <View
+                android:id="@+id/card_breath"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginTop="-12dp"
+                android:layout_marginEnd="-12dp"
+                android:layout_marginBottom="-12dp"
+                android:alpha="0.45"
+                android:background="@drawable/bg_guide_default_breath"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/card_selected"
+                app:layout_constraintEnd_toEndOf="@id/card_selected"
+                app:layout_constraintStart_toStartOf="@id/card_selected"
+                app:layout_constraintTop_toTopOf="@id/card_selected" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_selected"
+                android:layout_width="0dp"
+                android:layout_height="96dp"
+                android:background="@drawable/bg_guide_default_card"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:elevation="8dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@id/iv_system_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.42"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <FrameLayout
+                    android:id="@+id/radio_on"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_guide_radio_ring"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/radio_ripple"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_guide_radio_ripple" />
+
+                    <View
+                        android:id="@+id/radio_dot"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_guide_radio_dot" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/icon_wrap"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_guide_default_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/radio_on"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:padding="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/spalsh_round"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.VolumeIcon.Small"
+                        app:strokeWidth="0dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_card_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/guide_app_name"
+                    android:textColor="@color/guide_default_name"
+                    android:textSize="@dimen/guide_default_name_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tv_card_tagline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_wrap"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_card_tagline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/guide_default_card_tagline"
+                    android:textColor="@color/guide_default_desc"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_wrap"
+                    app:layout_constraintTop_toBottomOf="@id/tv_card_title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/card_border_glow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:background="@drawable/bg_guide_default_border_glow"
+                android:elevation="9dp"
+                app:layout_constraintBottom_toBottomOf="@id/card_selected"
+                app:layout_constraintEnd_toEndOf="@id/card_selected"
+                app:layout_constraintStart_toStartOf="@id/card_selected"
+                app:layout_constraintTop_toTopOf="@id/card_selected" />
+
+            <ImageView
+                android:id="@+id/iv_system_item"
+                android:layout_width="242dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/guide_page2_item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_selected" />
+
+        <ImageView
+            android:id="@+id/iv_hand"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@null"
+            android:elevation="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page2_hand"
+            app:layout_constraintStart_toStartOf="@id/card_selected"
+            app:layout_constraintTop_toTopOf="@id/card_selected" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/btn_set_default"
+        android:layout_width="325dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_guide_cta"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="24dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/guide_default_cta"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|center_vertical"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen0_weather_card"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <LinearLayout
+        android:id="@+id/screen0_weather_permission"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_weather_widget_permission"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_home_app_weather_location_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/weather_widget_need_location"
+            android:textColor="@color/color_1C2430"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/screen0_weather_allow"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_weather_permission_confirm"
+            android:gravity="center"
+            android:text="@string/weather_widget_allow"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen0_weather_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/screen0_weather_place_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_home_app_weather_location_red"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_place_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_place_label" />
+
+        <TextView
+            android:id="@+id/screen0_weather_place_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/weather_widget_placeholder"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_place_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/screen0_weather_refresh"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@string/weather_search_reload"
+            android:src="@drawable/icon_home_app_weather_refresh"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_place_label"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_place_label"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_place_label" />
+
+        <TextView
+            android:id="@+id/screen0_weather_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_widget_placeholder"
+            android:textColor="@color/color_white"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/screen0_weather_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/screen0_weather_place_label" />
+
+        <TextView
+            android:id="@+id/screen0_weather_degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="°"
+            android:textColor="@color/color_white"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_temperature"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_temperature"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_temperature" />
+
+        <View
+            android:id="@+id/screen0_weather_divider"
+            android:layout_width="1dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/icon_home_app_weather_devide"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_temperature"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_degree"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_temperature" />
+
+        <ImageView
+            android:id="@+id/screen0_weather_up"
+            android:layout_width="16dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_home_app_weather_up_widget"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_high"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_divider"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_high" />
+
+        <TextView
+            android:id="@+id/screen0_weather_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/weather_widget_placeholder"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/screen0_weather_low"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_up"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_temperature"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/screen0_weather_down"
+            android:layout_width="16dp"
+            android:layout_height="14dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_home_app_weather_down_widget"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_low"
+            app:layout_constraintStart_toStartOf="@id/screen0_weather_up"
+            app:layout_constraintTop_toTopOf="@id/screen0_weather_low" />
+
+        <TextView
+            android:id="@+id/screen0_weather_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/weather_widget_placeholder"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/screen0_weather_temperature"
+            app:layout_constraintStart_toEndOf="@id/screen0_weather_down"
+            app:layout_constraintTop_toBottomOf="@id/screen0_weather_high" />
+
+        <TextView
+            android:id="@+id/screen0_weather_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_widget_placeholder"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/screen0_weather_status_icon"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_home_app_weather_unknown_widget"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

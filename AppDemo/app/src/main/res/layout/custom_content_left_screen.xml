@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/left_screen_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <ImageView
+        android:id="@+id/left_screen_boost"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:clickable="true"
+        android:contentDescription="@string/content_boost"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/volume_notice"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/left_screen_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/bg_app"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/left_screen_banner_ad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/left_screen_boost" />
+
+    <FrameLayout
+        android:id="@+id/left_screen_banner_ad"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/left_screen_tab_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_EEEEEE"
+            android:gravity="center"
+            android:text="@string/discover_ad_placeholder"
+            android:textColor="@color/color_A1ADC8"
+            android:textSize="13sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/left_screen_tab_bar"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_tab_bar"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/left_screen_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selected"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/volume_settings"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/left_screen_control"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/volume_control"
+            android:textColor="@color/color_1B2326"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

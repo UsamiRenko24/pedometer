@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma rectangle_3：填充 @color/color_3099D5FF → @color/color_2E4EB5FF；外描边 @color/color_506999 → @color/color_14387C -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:endColor="@color/color_14387C"
+                android:startColor="@color/color_506999"
+                android:type="linear" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:endColor="@color/color_2E4EB5FF"
+                android:startColor="@color/color_3099D5FF"
+                android:type="linear" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>

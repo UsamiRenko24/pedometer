@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F7F8FA"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/folder_search_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/folder_back"
+            android:padding="8dp"
+            android:src="@drawable/ic_discover_back" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_folder_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp">
+
+            <EditText
+                android:id="@+id/folder_search_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/folder_search"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/color_1C1C1E"
+                android:textColorHint="@color/color_C7C7CC"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/folder_search_voice"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@null"
+                android:padding="6dp"
+                android:src="@drawable/icon_home_app_folder_voice_input" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@null"
+                android:padding="6dp"
+                android:src="@drawable/icon_home_app_folder_menu" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/folder_filter_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/folder_filter"
+            android:textColor="@color/color_1C1C1E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/folder_filter_arrow"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_folder_chevron_down" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/folder_filter_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_folder_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/folder_filter_time"
+            android:textColor="@color/color_696969"
+            android:textSize="14sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/folder_filter_time_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:selectionRequired="false"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_yesterday"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_yesterday"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_week"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_week"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/folder_filter_type"
+            android:textColor="@color/color_696969"
+            android:textSize="14sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/folder_filter_type_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:singleSelection="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_picture"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_picture"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_video"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_video"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_audio"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_audio"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_install"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_install"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/folder_filter_compressed"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/folder_filter_compressed"
+                android:textColor="@color/folder_chip_text"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/folder_chip_bg"
+                app:chipStrokeColor="@color/color_BFBFBF"
+                app:chipStrokeWidth="1dp" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/folder_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/folder_search_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="@string/folder_search_empty"
+        android:textColor="@color/color_696969"
+        android:textSize="14sp"
+        android:visibility="gone" />
+</LinearLayout>

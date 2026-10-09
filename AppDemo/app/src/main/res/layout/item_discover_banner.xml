@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="18dp"
+    android:paddingEnd="8dp">
+
+    <ImageView
+        android:id="@+id/discover_banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_discover_icon"
+        android:clipToOutline="true"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/bg_discover_carousel_shade" />
+
+    <TextView
+        android:id="@+id/discover_banner_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="40dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/discover_banner_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/color_F2FFFFFF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/discover_banner_action"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_discover_play"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/color_white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+</FrameLayout>

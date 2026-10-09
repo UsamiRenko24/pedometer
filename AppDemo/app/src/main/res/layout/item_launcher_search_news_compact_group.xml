@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/bg_launcher_search_news_group"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <include
+        android:id="@+id/search_news_group_row0"
+        layout="@layout/item_launcher_search_news_compact_group_row" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:background="@color/color_EEEEEE" />
+
+    <include
+        android:id="@+id/search_news_group_row1"
+        layout="@layout/item_launcher_search_news_compact_group_row" />
+</LinearLayout>

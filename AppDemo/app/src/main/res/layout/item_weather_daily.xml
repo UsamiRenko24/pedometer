@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/weather_day_label"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1C2430"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/weather_day_icon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/weather_day_low"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="@color/color_9AA3B2"
+        android:textSize="14sp" />
+
+    <com.demo.app.launcher.ui.view.weather.TemperatureBarView
+        android:id="@+id/weather_day_bar"
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/weather_day_high"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1C2430"
+        android:textSize="14sp" />
+</LinearLayout>

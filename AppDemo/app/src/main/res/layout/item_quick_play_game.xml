@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:id="@+id/quick_play_game_icon"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_quick_play_icon"
+        android:clipToOutline="true"
+        android:contentDescription="@null"
+        android:outlineProvider="background"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/quick_play_game_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textColor="@color/color_333333"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_discover_stat_star" />
+
+        <TextView
+            android:id="@+id/quick_play_game_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:textColor="@color/color_FFAE00"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quick_play_game_play"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_quick_play_button"
+            android:gravity="center"
+            android:minWidth="52dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/quick_play_action"
+            android:textColor="@color/color_white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

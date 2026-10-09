@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/predicted_popup_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/predicted_popup_card"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_screen0_predicted_app_popup"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <LinearLayout
+            android:id="@+id/predicted_popup_app_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_screen0_predicted_popup_row_ripple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_screen0_app_info"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="@string/screen0_app_info"
+                android:textColor="#DE000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/predicted_popup_caret"
+        android:layout_width="18dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="-1dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_screen0_predicted_popup_caret"
+        tools:ignore="ContentDescription" />
+</LinearLayout>

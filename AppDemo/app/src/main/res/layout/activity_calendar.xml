@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calendar_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+    <LinearLayout
+        android:id="@+id/calendar_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_4F7CFB"
+        android:paddingBottom="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/calendar_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/calendar_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/calendar_day_badge"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/icon_home_app_calendar_day"
+            android:contentDescription="@string/calendar_jump_title"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:textColor="@color/color_4F7CFB"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/calendar_sheet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-28dp"
+        android:background="@drawable/bg_calendar_sheet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_header" />
+
+    <LinearLayout
+        android:id="@+id/calendar_weekdays"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendar_days"
+        android:layout_width="0dp"
+        android:layout_height="312dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_weekdays" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendar_events"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_days" />
+
+    <ImageView
+        android:id="@+id/calendar_add"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        app:layout_goneMarginBottom="24dp"
+        android:background="@drawable/bg_calendar_fab"
+        android:contentDescription="@string/calendar_save"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_calendar_plus"
+        app:layout_constraintBottom_toTopOf="@id/calendar_today"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/calendar_bottom_ad"
+        layout="@layout/include_launcher_ad_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/calendar_today"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_calendar_fab"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:text="@string/calendar_today"
+        android:textColor="@color/color_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/calendar_bottom_ad"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

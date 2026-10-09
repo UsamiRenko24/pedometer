@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/news_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/news_location"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/news_area_title"
+            android:src="@drawable/icon_home_app_news_location" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/news_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <include
+        android:id="@+id/news_feed_ad"
+        layout="@layout/include_launcher_ad_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="16dp" />
+
+        <include
+            android:id="@+id/news_skeleton_include"
+            layout="@layout/layout_news_skeleton" />
+
+        <LinearLayout
+            android:id="@+id/news_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="140dp"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_home_app_news_error" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/news_loading_failed"
+                android:textColor="@color/color_8A8F99"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_refresh"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/bg_news_refresh"
+                android:gravity="center"
+                android:text="@string/news_refresh"
+                android:textColor="@color/color_FF8201"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.demo.app.launcher.ads.LauncherBottomBannerPlaceholderView
+        android:id="@+id/news_bottomBannerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

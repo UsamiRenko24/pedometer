@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/guide_page4_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 1. 音量台底座 -->
+    <ImageView
+        android:id="@+id/iv_pedestal"
+        android:layout_width="387dp"
+        android:layout_height="322dp"
+        android:layout_marginTop="128dp"
+        android:contentDescription="@null"
+        android:elevation="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guide_page4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/iv_shadow"
+        android:layout_width="227dp"
+        android:layout_height="25dp"
+        android:background="@drawable/bg_guide_page4_shadow"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pedestal"
+        app:layout_constraintEnd_toEndOf="@id/iv_pedestal"
+        app:layout_constraintStart_toStartOf="@id/iv_pedestal"
+        app:layout_constraintTop_toTopOf="@id/iv_pedestal"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <!-- 2. 从底座下沿渐隐到屏幕底 -->
+    <ImageView
+        android:id="@+id/iv_pedestal_mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/guide_page4_dizuo_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2b. 从底座下沿再盖一层到屏幕底 -->
+    <ImageView
+        android:id="@+id/iv_pedestal_mask_lower"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-125dp"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/guide_page4_mask_lower"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_pedestal" />
+
+    <!-- 3. 底部山峦（在蒙版之上） -->
+    <ImageView
+        android:id="@+id/iv_bg_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:elevation="2dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/guide_page4_bg_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1125:610"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 4. 音量图标、彩带、勾选（在蒙版之上） -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_dial"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:contentDescription="@null"
+        android:elevation="4dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/guide_page4_sound"
+        app:layout_constraintBottom_toTopOf="@id/iv_shadow"
+        app:layout_constraintEnd_toEndOf="@id/iv_pedestal"
+        app:layout_constraintStart_toStartOf="@id/iv_pedestal"
+        app:layout_constraintTop_toTopOf="@id/iv_pedestal"
+        app:layout_constraintVertical_bias="0.50"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.GuideSound"
+        app:strokeWidth="0dp" />
+
+    <ImageView
+        android:id="@+id/iv_confetti"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:contentDescription="@null"
+        android:layout_marginBottom="60dp"
+        android:elevation="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guide_page4_dai"
+        app:layout_constraintBottom_toBottomOf="@id/iv_dial"
+        app:layout_constraintEnd_toEndOf="@id/iv_pedestal"
+        app:layout_constraintStart_toStartOf="@id/iv_pedestal"
+        app:layout_constraintTop_toTopOf="@id/iv_dial"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:contentDescription="@null"
+        android:elevation="6dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guide_page4_true"
+        app:layout_constraintCircle="@id/iv_dial"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="90dp"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/confetti_fall"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="-88dp"
+        android:layout_marginEnd="28dp"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:text="@string/guide_complete_title"
+        android:textColor="@color/guide_text_color"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_pedestal" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:text="@string/guide_complete_subtitle"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+
+    <FrameLayout
+        android:id="@+id/btn_start"
+        android:layout_width="325dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_guide_cta"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:paddingStart="24dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/guide_complete_cta"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|center_vertical"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

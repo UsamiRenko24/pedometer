@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_quickplay_splash_gradient">
+
+    <LinearLayout
+        android:id="@+id/quick_play_splash_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.demo.app.launcher.ui.view.splash.SplashIconView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:contentDescription="@string/screen0_screen_light"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_home_app_quickplay" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/screen0_screen_light"
+            android:textColor="@color/color_white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.35" />
+
+        <ProgressBar
+            android:id="@+id/quick_play_splash_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="88dp"
+            android:max="1000"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_quickplay_splash_progress" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/launcher_flSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

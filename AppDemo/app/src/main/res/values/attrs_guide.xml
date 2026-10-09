@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GuideVolumeBar">
+        <attr name="gvbLevel" format="float" />
+        <attr name="gvbFillStart" format="color" />
+        <attr name="gvbFillEnd" format="color" />
+        <attr name="gvbTrackStart" format="color" />
+        <attr name="gvbTrackEnd" format="color" />
+        <attr name="gvbThumbColor" format="color" />
+        <attr name="gvbDelay" format="integer" />
+    </declare-styleable>
+</resources>

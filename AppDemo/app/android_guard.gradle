@@ -1,0 +1,52 @@
+if (!Options.IS_PUBLISH) {
+    apply plugin: "android-guard"
+
+    // 以下均为非必须，根据自己需要配置即可
+    androidGuard {
+
+        // packageChange 是一个更改 manifest 文件里 package（namespace） 属性的任务，
+        // 也就是更改 app 包名的任务(不会更改 applicationId ) ，
+        // 改完后，会将更改结果，同步到其他文件中(不会更改项目结构)
+        packageChange = ["com.photo.restore.todoapp": "com.demo.app"]
+
+        // 一个移动目录的任务，它支持同时移动任意个目录，
+        // 它会将原目录下的所有文件(包括子目录)移动到另外一个文件夹下，并将移动的结果，同步到其他文件中
+        moveDir = ["com.photo.restore.todoapp": "com.demo.app"]
+
+        // 资源文件白名单，支持具体文件名称或者目录名称，支持通配符
+        resWhiteList = [
+                "R.string.app_name",
+                "R.id.@android:id/message",
+        ]
+
+
+        // 类文件白名单，支持具体文件或者包名，支持通配符
+        classWhiteList = [
+        ]
+
+        // 自定义混淆字符（key：索要混淆的字符；value：是否仅小写）
+        customStringMap = []
+
+        // 声明字符白名单，防止字符名称被混淆；配合 declarationChange 任务使用
+        declarationWhiteList = [
+                "DEFAULT",
+        ]
+
+        // 字符串加解密白名单，防止字符被混淆；配合 stringFog 任务使用；规则如下：
+        stringFogWhiteList = [
+        ]
+
+        // 绝对白名单，防止类文件被混淆
+        absoluteWhiteList = [
+
+        ]
+        // 声明混淆相关配置
+        declarationFeatures {
+            staticConstant = true
+            instanceVariable = false
+            methodName = false
+            methodParameter = false
+            enumConstant = true
+        }
+    }
+}

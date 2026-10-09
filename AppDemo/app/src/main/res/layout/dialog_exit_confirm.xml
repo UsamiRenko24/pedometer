@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_screen0_menu"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/exit_confirm_title"
+            android:textColor="@color/color_1C1C1E"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/exitConfirm_btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@color/color_EEEEEE"
+                android:gravity="center"
+                android:text="@string/feedback_cancel"
+                android:textColor="@color/color_A1ADC8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/exitConfirm_btnExit"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@color/color_4F7CFB"
+                android:gravity="center"
+                android:text="@string/exit_confirm_action"
+                android:textColor="@color/color_white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <com.demo.app.launcher.ads.LauncherNativeAdPlaceholderView
+            android:id="@+id/exitConfirm_adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</FrameLayout>

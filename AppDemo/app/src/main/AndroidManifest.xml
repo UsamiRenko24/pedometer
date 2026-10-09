@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.demo.app">
+
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+
+        <activity
+            android:name="com.demo.app.ui.activity.SplashActivity"
+            android:configChanges="locale|layoutDirection|uiMode|screenSize|smallestScreenSize|screenLayout|orientation|density|fontScale"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.demo.app.ui.activity.GuideActivity"
+            android:configChanges="locale|layoutDirection|uiMode|screenSize|smallestScreenSize|screenLayout|orientation|density|fontScale"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.LanguageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.NotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.FaqDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.FaqActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.launcher.faq.LauncherFaqActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.launcher.faq.LauncherFaqDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.SupportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.ui.activity.GestureGuideActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.VolumeHomeLauncherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/HomeLauncherTheme" />
+
+        <activity
+            android:name="com.demo.app.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowBackground="@color/bg_app" />
+
+        <activity
+            android:name="com.demo.app.launcher.workspace.Screen0PlaceholderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication" />
+
+        <!-- ================== weather start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.weather.WeatherLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_weather"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.weather"
+            android:theme="@style/NoAnimTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.weather.WeatherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_weather"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.weather"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.weather.WeatherCityManageActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_weather"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.weather"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.weather.WeatherCitySearchActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_weather"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.weather"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== weather end ==================  -->
+
+        <!-- ================== news start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.news.NewsLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_news"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.news"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.news.NewsActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_news"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.news"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.news.NewsDetailActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.news"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.news.NewsAreaActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.news"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.news.NewsVideoActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.news"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== news end ==================  -->
+
+        <!-- ================== wallpaper start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.wallpaper.WallpaperLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_wallpaper"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.wallpaper"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.wallpaper.WallpaperActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_wallpaper"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.wallpaper"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.wallpaper.WallpaperPreviewActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.wallpaper"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== wallpaper end ==================  -->
+
+        <!-- ================== quick play start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.quickplay.QuickPlayLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_quickplay"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.quickplay"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.quickplay.QuickPlayActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_quickplay"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.quickplay"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== quick play end ==================  -->
+
+        <!-- ================== discover start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.discover.DiscoverLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_discover"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.discover"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.discover.DiscoverActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_discover"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.discover"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.discover.DiscoverDetailActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.discover"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== discover end ==================  -->
+
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.flashlight.FlashlightLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_flashlight_launcher"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.flashlight"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.flashlight.FlashlightActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.flashlight"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <receiver
+            android:name="com.demo.app.launcher.note.NoteWidgetProvider"
+            android:exported="true"
+            android:label="@string/note_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/note_app_widget_info" />
+        </receiver>
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.note.NoteActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.note"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.note.NoteEditActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.note"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.note.NoteLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_note"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.note"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.calendar.CalendarActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.calendar"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.calendar.CalendarEditActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.calendar"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <receiver
+            android:name="com.demo.app.launcher.calendar.CalendarReminderReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.calendar.CalendarLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_calendar"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.calendar"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <!-- ================== folder start ==================  -->
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.folder.FolderLauncherActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_folder_desk"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.folder"
+            android:theme="@style/NoAnimTheme"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.folder.FolderActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:icon="@drawable/icon_home_app_folder_desk"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.folder"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.view.search.SearchVoiceActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.folder.FolderSearchActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.folder"
+            android:theme="@style/Theme.SlideActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.demo.app.launcher.ui.activity.folder.FolderCategoryActivity"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.launcher.folder"
+            android:theme="@style/Theme.SlideActivity"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <!-- ================== folder end ==================  -->
+
+        <!-- ================== advert start ================== -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <!-- google -->
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${ADMOB_APP_ID}" />
+        <!-- ================== advert end ================== -->
+
+
+        <!-- ================== firebase start ================== -->
+        <!-- firebase analytics -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+        <!-- firebase messaging -->
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+
+        <!-- firebase crashlytics -->
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+        <!-- ================== firebase end ================== -->
+
+    </application>
+
+</manifest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_guide_gradient">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/guide_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+    <!--
+    <TextView
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_guide_skip"
+        android:gravity="center"
+        android:minWidth="64dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/guide_skip"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+    -->
+
+    <FrameLayout
+        android:id="@+id/launcherGuide_flSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

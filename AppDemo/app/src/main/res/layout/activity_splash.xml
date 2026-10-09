@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spalsh_bg">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/spalsh_bg" />
+
+    <View
+        android:id="@+id/splash_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_40000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.26" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:clipChildren="false">
+
+            <ImageView
+                android:id="@+id/iv_wave_static"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/spalsh_wave" />
+
+            <com.demo.app.ui.widget.SoundWaveView
+                android:id="@+id/sound_wave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- 音量图标光晕：静止的蓝光，不缩放 -->
+            <View
+                android:id="@+id/iv_splash_icon_glow"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:alpha="0.35"
+                android:background="@drawable/bg_splash_icon_glow" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_splash_icon"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/guide_page4_sound"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.VolumeIcon"
+                app:strokeWidth="0dp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_splash_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/splash_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_splash_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/splash_subtitle"
+            android:textColor="@color/color_8FB7FF"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.44" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="48dp"
+        android:paddingEnd="48dp"
+        android:paddingBottom="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.18"
+            android:text="@string/splash_loading"
+            android:textColor="@color/color_79ACE3"
+            android:textSize="12sp" />
+
+        <ProgressBar
+            android:id="@+id/splash_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
+            android:max="1000"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_splash_progress" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/splash_flSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

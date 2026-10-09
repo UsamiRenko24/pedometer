@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 静止蓝光：中心被图标挡住，只露出一圈向外淡掉的光 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="50%p"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:startColor="@color/color_00D2FF"
+        android:centerColor="@color/color_8833B4FF"
+        android:endColor="@color/color_2F00A8FF" />
+</shape>

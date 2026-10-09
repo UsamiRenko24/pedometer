@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_guide_gradient"
+    android:clipChildren="false">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_guide_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/guide_story_control_title"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/guide_story_control_subtitle"
+        android:textColor="@color/accent_blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <LinearLayout
+        android:id="@+id/slider_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/dot_row"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.demo.app.ui.widget.GuideVolumeBar
+                android:id="@+id/bar_ringtone"
+                android:layout_width="46dp"
+                android:layout_height="210dp"
+                app:gvbDelay="0"
+                app:gvbFillEnd="@color/color_5C7AFE"
+                app:gvbFillStart="@color/color_60DBFC"
+                app:gvbLevel="0.62" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@null"
+                android:src="@drawable/guide_page6_ringtone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/guide_story_ringtone"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.demo.app.ui.widget.GuideVolumeBar
+                android:id="@+id/bar_alarm"
+                android:layout_width="46dp"
+                android:layout_height="210dp"
+                app:gvbDelay="280"
+                app:gvbFillEnd="@color/color_7A5CFF"
+                app:gvbFillStart="@color/color_C4B2FF"
+                app:gvbLevel="0.5" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@null"
+                android:src="@drawable/guide_page6_alarm" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/guide_story_alarm"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.demo.app.ui.widget.GuideVolumeBar
+                android:id="@+id/bar_notify"
+                android:layout_width="46dp"
+                android:layout_height="210dp"
+                app:gvbDelay="520"
+                app:gvbFillEnd="@color/color_E85CFF"
+                app:gvbFillStart="@color/color_FF8AD4"
+                app:gvbLevel="0.42" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@null"
+                android:src="@drawable/guide_page6_notify" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/guide_story_notifications"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.demo.app.ui.widget.GuideVolumeBar
+                android:id="@+id/bar_media"
+                android:layout_width="46dp"
+                android:layout_height="210dp"
+                app:gvbDelay="160"
+                app:gvbFillEnd="@color/color_FF8A5B"
+                app:gvbFillStart="@color/color_FFC48A"
+                app:gvbLevel="0.74" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@null"
+                android:src="@drawable/guide_page6_media" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/guide_story_media"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dot_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20dp"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/iv_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/bg_guide_dot_on" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_guide_dot_off" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_guide_dot_off" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/guide_page_bottom_white"
+        app:layout_constraintBottom_toTopOf="@id/guide_ad_slot"
+        app:layout_constraintDimensionRatio="H,1125:512"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="36dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bottom"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_story_next_level"
+            android:textColor="@color/color_12345F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/guide_story_volume_control"
+            android:textColor="@color/color_5C7596"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/btn_next"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_guide_story_next"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_bottom"
+        app:layout_constraintVertical_bias="0.65">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right_long" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/guide_ad_slot"
+        layout="@layout/view_native_ad_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

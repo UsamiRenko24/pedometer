@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.demo.app.launcher.ui.view.quickplay.QuickPlayWaveHeaderLayout
+        android:id="@+id/quick_play_header"
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:clipChildren="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_home_app_quick_play_top_bg" />
+
+        <FrameLayout
+            android:id="@+id/quick_play_header_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginEnd="168dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quick_play_hub_title"
+                    android:textColor="@color/color_white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/quick_play_hub_subtitle"
+                    android:textColor="@color/color_white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="215dp"
+                android:layout_height="148dp"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_home_app_quick_play_top" />
+        </FrameLayout>
+    </com.demo.app.launcher.ui.view.quickplay.QuickPlayWaveHeaderLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/quick_play_section_title"
+        android:textColor="@color/color_1C1C1E"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>

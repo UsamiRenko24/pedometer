@@ -1,0 +1,169 @@
+package com.demo.app.integration.language;
+
+import android.app.LocaleManager;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
+import android.os.LocaleList;
+import android.text.TextUtils;
+
+import java.util.Locale;
+
+/**
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/MultiLanguages
+ * time   : 2019/05/03
+ * desc   : 国际化工具类
+ */
+@SuppressWarnings("deprecation")
+final class LanguagesUtils {
+
+    /**
+     * 获取语种对象
+     */
+    static Locale getLocale(Context context) {
+        return getLocale(context.getResources().getConfiguration());
+    }
+
+    static Locale getLocale(Configuration config) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return config.getLocales().get(0);
+        } else {
+            return config.locale;
+        }
+    }
+
+    /**
+     * 设置语种对象
+     */
+    static void setLocale(Configuration config, Locale locale) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            LocaleList localeList = new LocaleList(locale);
+            config.setLocales(localeList);
+            // 修复在 Android 13 的联想平板上调用 setLocales 或者 setLocale 修改语种无效的问题
+            // Github issue 地址：https://github.com/getActivity/MultiLanguages/pull/62
+            if (!equalsLanguageAndCountry(locale, config.getLocales().get(0))) {
+                config.locale = locale;
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            config.setLocale(locale);
+        } else {
+            config.locale = locale;
+        }
+
+        // 某些语种（例如：阿拉伯语）默认需支持 RTL 特性，以便符合阿拉伯人的阅读习惯
+        // Github issue 地址：https://github.com/getActivity/MultiLanguages/pull/62
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            config.setLayoutDirection(locale);
+        }
+    }
+
+    /**
+     * 获取系统的语种对象
+     */
+    static Locale getSystemLocale(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // 在 Android 13 上，不能用 Resources.getSystem() 来获取系统语种了
+            // Android 13 上面新增了一个 LocaleManager 的语种管理类
+            // 因为如果调用 LocaleManager.setApplicationLocales 会影响获取到的结果不准确
+            // 所以应该得用 LocaleManager.getSystemLocales 来获取会比较精准
+            final LocaleManager localeManager = context.getSystemService(LocaleManager.class);
+            final LocaleList localeList = localeManager != null ? localeManager.getSystemLocales() : null;
+            if (localeList != null && !localeList.isEmpty()) {
+                return localeList.get(0);
+            }
+        }
+
+        return LanguagesUtils.getLocale(Resources.getSystem().getConfiguration());
+    }
+
+    /**
+     * 获取默认的语种环境
+     */
+    static Locale getDefaultLocale() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return LocaleList.getDefault().get(0);
+        } else {
+            return Locale.getDefault();
+        }
+    }
+
+    /**
+     * 设置默认的语种环境（日期格式化会用到）
+     */
+    static void setDefaultLocale(Context context) {
+        Configuration configuration = context.getResources().getConfiguration();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            LocaleList.setDefault(configuration.getLocales());
+        } else {
+            Locale.setDefault(configuration.locale);
+        }
+    }
+
+    /**
+     * 绑定当前 App 的语种
+     */
+    static Context attachLanguages(Context context, Locale locale) {
+        Resources resources = context.getResources();
+        Configuration config = new Configuration(resources.getConfiguration());
+        setLocale(config, locale);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            try {
+                context = context.createConfigurationContext(config);
+            } catch (Throwable ignored) {
+            }
+        }
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
+        return context;
+    }
+
+    /**
+     * 更新 Resources 语种
+     */
+    static void updateLanguages(Resources resources, Locale locale) {
+        Configuration config = resources.getConfiguration();
+        setLocale(config, locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
+    }
+
+    /**
+     * 更新手机配置信息变化
+     */
+    static void updateConfigurationChanged(Context context, Configuration newConfig, Locale appLanguage) {
+        Configuration config = new Configuration(newConfig);
+        // 绑定当前语种到这个新的配置对象中
+        setLocale(config, appLanguage);
+        Resources resources = context.getResources();
+        // 更新上下文的配置信息
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
+    }
+
+    /**
+     * 生成某个语种下的 Resources 对象
+     */
+    static Resources generateLanguageResources(Context context, Locale locale) {
+        Configuration config = new Configuration();
+        setLocale(config, locale);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            return context.createConfigurationContext(config).getResources();
+        }
+        return new Resources(context.getAssets(), context.getResources().getDisplayMetrics(), config);
+    }
+
+    /**
+     * 对比两个语言是否同一个语种（比如：中文有简体和繁体，但是它们都属于同一个语种）
+     */
+    public static boolean equalsLanguage(Locale locale1, Locale locale2) {
+        return TextUtils.equals(locale1.getLanguage(), locale2.getLanguage());
+    }
+
+    /**
+     * 对比两个语言是否同一个语种并且同一个地方的（比如：中国大陆用的中文简体，中国台湾用的中文繁体）
+     */
+    public static boolean equalsLanguageAndCountry(Locale locale1, Locale locale2) {
+        // Github issue 地址：https://github.com/getActivity/MultiLanguages/issues/63
+        return TextUtils.equals(locale1.getLanguage(), locale2.getLanguage()) &&
+                TextUtils.equals(locale1.getCountry(), locale2.getCountry());
+    }
+}

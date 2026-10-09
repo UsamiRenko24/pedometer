@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wallpaper_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/wallpaper_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/color_white"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/wallpaper_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/wallpaper_menu"
+            android:padding="8dp"
+            android:src="@drawable/icon_home_app_wallpaper_menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/screen0_wallpaper"
+            android:textColor="@color/color_1C1C1E"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/wallpaper_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/wallpaper_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wallpaper_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingStart="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="12dp" />
+
+                <ProgressBar
+                    android:id="@+id/wallpaper_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <LinearLayout
+                    android:id="@+id/wallpaper_network_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="140dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/icon_home_app_wallpaper_network_error" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/wallpaper_no_network"
+                        android:textColor="@color/color_8B95A5"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/wallpaper_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/wallpaper_empty"
+                    android:textColor="@color/color_8B95A5"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <View
+            android:id="@+id/wallpaper_scrim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_66000000"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wallpaper_drawer"
+            android:layout_width="248dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/color_white"
+            android:elevation="8dp"
+            android:overScrollMode="never"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

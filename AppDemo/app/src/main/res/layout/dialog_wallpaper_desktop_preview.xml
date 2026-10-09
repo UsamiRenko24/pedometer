@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wallpaper_desktop_preview_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_000000">
+
+    <ImageView
+        android:id="@+id/wallpaper_desktop_preview_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wallpaper_desktop_preview_chrome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/wallpaper_desktop_preview_ad"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/bg_wallpaper_desktop_ad_card"
+            android:gravity="center"
+            android:text="@string/discover_ad_placeholder"
+            android:textColor="@color/color_A1ADC8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/wallpaper_desktop_preview_bottom_ad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_wallpaper_desktop_bottom_ad"
+            android:minHeight="52dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_wallpaper_desktop_ad_tag"
+                android:paddingStart="6dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="2dp"
+                android:text="@string/discover_ad_placeholder"
+                android:textColor="@color/color_8A8A8A"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:src="@drawable/ic_wallpaper_close"
+                app:tint="@color/color_BFBFBF" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/wallpaper_desktop_preview_search"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_wallpaper_desktop_search_bar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintBottom_toTopOf="@id/wallpaper_desktop_preview_bottom_ad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_home_app_search_google" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/screen0_search_hint"
+                android:textColor="@color/color_9AA0A6"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/color_E0E0E0" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_home_app_search_task" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/launcher_search_voice"
+                app:tint="@color/color_2c8fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallpaper_desktop_preview_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/wallpaper_desktop_preview_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_gesture_page_dot_on" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_gesture_page_dot" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_gesture_page_dot" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallpaper_desktop_preview_apps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/wallpaper_desktop_preview_dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/wallpaper_desktop_preview_app_volume"
+                layout="@layout/item_wallpaper_desktop_preview_app" />
+
+            <include
+                android:id="@+id/wallpaper_desktop_preview_app_news"
+                layout="@layout/item_wallpaper_desktop_preview_app" />
+
+            <include
+                android:id="@+id/wallpaper_desktop_preview_app_weather"
+                layout="@layout/item_wallpaper_desktop_preview_app" />
+
+            <include
+                android:id="@+id/wallpaper_desktop_preview_app_google"
+                layout="@layout/item_wallpaper_desktop_preview_app" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/wallpaper_desktop_preview_close"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_wallpaper_preview_button"
+        android:contentDescription="@string/wallpaper_preview_close"
+        android:padding="11dp"
+        android:src="@drawable/ic_wallpaper_close" />
+</FrameLayout>

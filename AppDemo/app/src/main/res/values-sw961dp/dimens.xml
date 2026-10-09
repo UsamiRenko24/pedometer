@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+<dimen name="sw_dp_10">26.6944dp</dimen>
+<dimen name="sw_dp_24">64.0667dp</dimen>
+<dimen name="sw_dp_0">0dp</dimen>
+<dimen name="sw_dp_6">16.0166dp</dimen>
+<dimen name="sw_dp_8">21.3555dp</dimen>
+<dimen name="sw_dp_12">32.0333dp</dimen>
+<dimen name="sw_dp_14">37.3722dp</dimen>
+<dimen name="sw_dp_20">53.3888dp</dimen>
+<dimen name="sw_dp_22">58.7277dp</dimen>
+<dimen name="sw_dp_32">85.4221dp</dimen>
+<dimen name="sw_dp_72">192.1997dp</dimen>
+</resources>

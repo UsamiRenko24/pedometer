@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wallpaper_preview_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_000000">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/wallpaper_preview_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/wallpaper_preview_back"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/wallpaper_back"
+        android:src="@drawable/icon_home_app_wallpaper_back" />
+
+    <ImageView
+        android:id="@+id/wallpaper_preview_open"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_wallpaper_preview_button"
+        android:contentDescription="@string/wallpaper_preview"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_home_app_wallpaper_preview" />
+
+    <com.demo.app.launcher.ads.LauncherBottomBannerPlaceholderView
+        android:id="@+id/wallpaper_bottomBannerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="56dp"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:id="@+id/wallpaper_preview_setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_wallpaper_setting"
+            android:gravity="center"
+            android:text="@string/wallpaper_setting"
+            android:textColor="@color/color_white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/wallpaper_preview_download"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_wallpaper_download"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_home_app_wallpaper_img_download" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/wallpaper_download"
+                android:textColor="@color/color_4A90F5"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallpaper_preview_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_wallpaper_credit"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="14dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_home_app_wallpaper_remind" />
+
+            <TextView
+                android:id="@+id/wallpaper_preview_credit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/color_white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

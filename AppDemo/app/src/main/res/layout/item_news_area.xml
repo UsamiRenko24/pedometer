@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_news_area_normal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/news_area_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:textColor="@color/color_1C2430"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/news_area_check"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="end|center_vertical"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_home_app_news_select"
+        android:visibility="gone" />
+</FrameLayout>

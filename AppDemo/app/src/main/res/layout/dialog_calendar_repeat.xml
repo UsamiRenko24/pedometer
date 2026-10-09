@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_calendar_dialog"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="18dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/calendar_repeat"
+        android:textColor="@color/color_1C1C1E"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="#d9d9d9" />
+
+    <RadioGroup
+        android:id="@+id/calendar_repeat_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/calendar_repeat_once"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:buttonTint="@color/color_3C7CFF"
+            android:text="@string/calendar_once"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/calendar_repeat_daily"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:buttonTint="@color/color_3C7CFF"
+            android:text="@string/calendar_daily"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/calendar_repeat_weekly"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:buttonTint="@color/color_3C7CFF"
+            android:text="@string/calendar_weekly"
+            android:textColor="#000000" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/calendar_repeat_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+</LinearLayout>

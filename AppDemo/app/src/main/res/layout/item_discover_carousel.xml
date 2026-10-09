@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/discover_carousel_pager"
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:clipChildren="false"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:id="@+id/discover_carousel_dots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="8dp" />
+
+    <com.demo.app.launcher.ads.LauncherNativeAdPlaceholderView
+        android:id="@+id/carousel_native_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
